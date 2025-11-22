@@ -32,7 +32,7 @@ export const editStudent = async (req, res) => {
     const {studentId} = req.params
 
     try{
-        const updateId = await StudentModel.updateBook(id, name, srcode, course, studentId);
+        const updateId = await StudentModel.updatestudent(id, name, srcode, course, studentId);
         res.status(200).json({success: true, message: updateId});
     }catch(e){
         console.log(e);
@@ -41,7 +41,7 @@ export const editStudent = async (req, res) => {
 }
 
 export const deleteStudent = async (req, res) => {
-    const {booksId} = req.params;
+    const {studentId} = req.params;
 
     try{
         const deletedId = await StudentModel.deleteStudent(studentId);
