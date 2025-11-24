@@ -2,7 +2,7 @@ import * as BookModel from "../models/BookModel.js";
 
 export const fetchBooks = async (req, res) => {
     try {
-        const book = await BookModel.getBooks();
+        const booksId = await BookModel.getBooks();
         res.status(200).json({ success: true, message: booksId});
     } catch (e) {
         console.log(e);
